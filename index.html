@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday KEE 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #c2e9fb, #fbc2eb);
+  text-align: center;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* floating hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: float 6s infinite;
+  color: #ff6f91;
+}
+
+@keyframes float {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-100vh);}
+}
+
+.container {
+  padding: 50px 20px;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5em;
+}
+
+.message {
+  font-size: 1.3em;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: #ff6f91;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+  margin-top: 20px;
+  font-size: 1.4em;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- MUSIC (replace with your file if you have it) -->
+<audio autoplay loop>
+  <source src="your-song.mp3" type="audio/mp3">
+</audio>
+
+<div class="container">
+  <h1>Happy Birthday My KEE 🎂💖</h1>
+
+  <div class="message">
+    Happiest Birthday, my number one, my KEE 💖 <br><br>
+
+    May this year bring you closer to everything your heart desires.  
+    Stay healthy and happy always ✨ <br><br>
+
+    I’ll be right here with you, from now to forever 💞 <br><br>
+
+    You mean so much more to me than words can ever explain…  
+    I love you endlessly 💖
+  </div>
+
+  <button onclick="showLove()">Click me 💌</button>
+
+  <div id="loveMsg" class="hidden">
+    Forever yours, always 🤍✨
+  </div>
+</div>
+
+<script>
+function showLove() {
+  document.getElementById("loveMsg").style.display = "block";
+}
+
+/* floating hearts generator */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}, 500);
+</script>
+
+</body>
+</html>
