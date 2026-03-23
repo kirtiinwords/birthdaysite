@@ -2,32 +2,31 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday KEE 💖</title>
+<title>Happy Birthday My Love 💖</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #c2e9fb, #fbc2eb);
+  background: linear-gradient(135deg, #89CFF0, #c2e9fb);
   text-align: center;
   color: #fff;
   overflow-x: hidden;
 }
 
-/* floating hearts */
-.heart {
+/* confetti emojis */
+.emoji {
   position: fixed;
   bottom: -10px;
-  font-size: 20px;
-  animation: float 6s infinite;
-  color: #ff6f91;
+  font-size: 22px;
+  animation: float 6s linear infinite;
 }
 
 @keyframes float {
-  0% {transform: translateY(0);}
-  100% {transform: translateY(-100vh);}
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
 }
 
 .container {
@@ -35,31 +34,39 @@ body {
 }
 
 h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3.5em;
+  font-size: 2.8em;
+  font-weight: 700;
+}
+
+.main-title {
+  font-size: 3em;
+  font-weight: bold;
 }
 
 .message {
-  font-size: 1.3em;
+  margin-top: 30px;
+  font-size: 1.2em;
   line-height: 1.8;
-  margin-top: 20px;
+  font-family: 'Great Vibes', cursive;
 }
 
 button {
-  margin-top: 30px;
-  padding: 12px 25px;
-  background: #ff6f91;
+  margin-top: 40px;
+  padding: 14px 30px;
+  font-size: 1.1em;
+  border-radius: 30px;
   border: none;
-  border-radius: 25px;
+  background: #ff6f91;
   color: white;
-  font-size: 1em;
   cursor: pointer;
 }
 
 .hidden {
   display: none;
-  margin-top: 20px;
-  font-size: 1.4em;
+  margin-top: 25px;
+  font-size: 1.3em;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
 }
 </style>
 
@@ -67,50 +74,72 @@ button {
 
 <body>
 
-<!-- MUSIC (replace with your file if you have it) -->
+<!-- MUSIC (replace with your song file if you upload it) -->
 <audio autoplay loop>
   <source src="your-song.mp3" type="audio/mp3">
 </audio>
 
 <div class="container">
-  <h1>Happy Birthday My KEE 🎂💖</h1>
+
+  <div class="main-title">
+    🎂💖 HAPPIEST BIRTHDAY MY LOVE 💖🎉🎈
+  </div>
 
   <div class="message">
-    Happiest Birthday, my number one, my KEE 💖 <br><br>
+    Happy happy happy birthday, baby 🥹💞 <br><br>
 
-    May this year bring you closer to everything your heart desires.  
-    Stay healthy and happy always ✨ <br><br>
+    May this year bring you closer to every dream of yours. <br>
+    Wishing you a great, successful, and happy year ahead ✨ <br><br>
 
-    I’ll be right here with you, from now to forever 💞 <br><br>
+    I just want to make you the happiest you’ve ever been. <br>
+    I want to make you feel loved like no one else ever has 💖 <br><br>
 
-    You mean so much more to me than words can ever explain…  
-    I love you endlessly 💖
+    I want you to know that you can come to me even on the days you don’t feel like showing up—  
+    I’ll still be there, waiting for you 🤍 <br><br>
+
+    I cannot thank God enough for having you in my life. <br>
+    I am so very grateful 🥹 <br><br>
+
+    I love you. <br>
+    I really do—with everything that I have in me. <br>
+    I love you endlessly 💞✨
   </div>
 
-  <button onclick="showLove()">Click me 💌</button>
+  <button onclick="showMessage()">Tap here KEE 💌</button>
 
-  <div id="loveMsg" class="hidden">
-    Forever yours, always 🤍✨
+  <div id="surprise" class="hidden">
+    I don’t say it often, but you mean the world to me 🌍💖 <br><br>
+
+    You deserve all the love in this world. <br><br>
+
+    I hope your birthday this year is better than all your past ones 🥹✨ <br><br>
+
+    Thank you so much for being the person you are. <br><br>
+
+    Your KEE loves youuuu… muahhh 💋💞
   </div>
+
 </div>
 
 <script>
-function showLove() {
-  document.getElementById("loveMsg").style.display = "block";
+function showMessage() {
+  document.getElementById("surprise").style.display = "block";
 }
 
-/* floating hearts generator */
+/* floating emojis (cake, balloons, confetti) */
+const emojis = ["🎈","🎂","🎉","💖","✨"];
+
 setInterval(() => {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "💖";
-  heart.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(heart);
+  const el = document.createElement("div");
+  el.classList.add("emoji");
+  el.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+  el.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(el);
 
   setTimeout(() => {
-    heart.remove();
+    el.remove();
   }, 6000);
-}, 500);
+}, 400);
 </script>
 
 </body>
